@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Thymeleaf Demo</title>
+
+    <!-- reference CSS file -->
+    <link rel="stylesheet"
+          th:href="@{/css/demo.css}" />
+
+</head>
+<body>
+
+<div class="container">
+
+    <h3>Employee Directory</h3>
+    <hr>
+    <h4 style="font-weight: bolder">Save Employee</h4>
+    <form class="d-flex flex-column" action="#" th:action="@{/employees/save}" method="POST" th:object="${employee}" >
+    <input th:field="*{firstName}"  class="form-control mb-4 w-25" placeholder="first name" type="text" />
+        <input th:field="*{lastName}" class="form-control mb-4 w-25" placeholder="first name" type="text" />
+        <input th:field="*{email}" class="form-control mb-4 w-25" placeholder="first name" type="text" />
+        <button type="submit" class="btn btn-info col-2">Add Employee</button>
+    </form>
+
+</div>
+
+</body>
+
+</html>
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<h1>Company home page</h1>
+<hr/>
+Welcome to the company home page
+<div>
+    <p style="display:flex;font-weight: bolder">User:   <span style="display:inline;margin-left:1rem;font-weight: normal" sec:authentication="principal.username"></span></p>
+    <p style="display:flex;font-weight: bolder">Role:   <span style="display:inline;margin-left:1rem;font-weight: normal" sec:authentication="principal.authorities"></span></p>
+</div>
+<form style="margin-bottom:2rem;" th:action="@{/logout}" method="POST" action="#">
+    <button type="submit" >Logout</button>
+</form>
+<button ><a th:href="@{/leaders}">Leaders Page</a></button>
+<button><a th:href="@{/system}">System Page</a></button>
+</body>
+</html>
